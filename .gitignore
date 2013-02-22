@@ -1,0 +1,13 @@
+log/*
+temp/*
+vendor/*
+
+.DS_Store
+!.gitignore
+!.htaccess
+!web.config
+/nbproject/private/
+
+composer.lock
+
+AlreadeyInstalled
