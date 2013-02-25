@@ -14,20 +14,18 @@ class Object {
 	 * @param type $varName
 	 * @return type
 	 */
-	public function __get($varName)
-    {
+	public function __get($varName) {
 		$varNameGetter = 'get' . ucfirst($varName);
-		if(method_exists($this, $varNameGetter))
+		if (method_exists($this, $varNameGetter))
 			return call_user_func(array($this, $varNameGetter));
 		else
 			throw new \AccessingProtectedVariableException();
-    }
+	}
 
-    /*
-	public function __set($varName,$varValue)
-    {
-    }
+	/*
+	  public function __set($varName,$varValue)
+	  {
+	  }
 	 *
 	 */
-
 }

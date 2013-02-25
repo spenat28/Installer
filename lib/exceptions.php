@@ -19,11 +19,9 @@
  *         - NotSupportedException
  *             - DeprecatedException
  *         - StaticClassException
- *		- FatalErrorException
+ * 		- FatalErrorException
  *
  */
-
-
 // === Runtime exceptions ======================================================
 
 /**
@@ -32,48 +30,36 @@
  *
  * @codeCoverageIgnore
  */
-class DuplicateEntryException extends \RuntimeException
-{
+class DuplicateEntryException extends \RuntimeException {
 
 }
-
-
 
 /**
  * Výjimky vyhazovaná v případě, že se dojdek IO chybě.
  *
  * @codeCoverageIgnore.
  */
-class IOException extends \RuntimeException
-{
+class IOException extends \RuntimeException {
 
 }
-
-
 
 /**
  * Výjimka vyhazovaná při neexistenci souboru.
  *
  * @codeCoverageIgnore
  */
-class FileNotFoundException extends IOException
-{
+class FileNotFoundException extends IOException {
 
 }
-
-
 
 /**
  * Výjimka vyhazovaná při neexistenci složky.
  *
  * @codeCoverageIgnore
  */
-class DirectoryNotFoundException extends IOException
-{
+class DirectoryNotFoundException extends IOException {
 
 }
-
-
 
 // === Logic exceptions ========================================================
 
@@ -83,12 +69,9 @@ class DirectoryNotFoundException extends IOException
  *
  * @codeCoverageIgnore
  */
-class ArgumentOutOfRangeException extends \InvalidArgumentException
-{
+class ArgumentOutOfRangeException extends \InvalidArgumentException {
 
 }
-
-
 
 /**
  * Výjimka vyhazovaná v případě, že volaná metoda nebo její část není ještě
@@ -96,24 +79,18 @@ class ArgumentOutOfRangeException extends \InvalidArgumentException
  *
  * @codeCoverageIgnore
  */
-class NotImplementedException extends \LogicException
-{
+class NotImplementedException extends \LogicException {
 
 }
-
-
 
 /**
  * Výjimka vyhazovaná v případě, že požadovaná činnost není podporovaná.
  *
  * @codeCoverageIgnore
  */
-class NotSupportedException extends \LogicException
-{
+class NotSupportedException extends \LogicException {
 
 }
-
-
 
 /**
  * Výjimka vyhazovaná v případě, že volaná metoda nebo způsob jejího volání
@@ -121,29 +98,23 @@ class NotSupportedException extends \LogicException
  *
  * @codeCoverageIgnore
  */
-class DeprecatedException extends NotSupportedException
-{
+class DeprecatedException extends NotSupportedException {
 
 }
-
-
 
 /**
  * Výjimka vyhazovaná pří pokusu o vytvoření instance statické třídy.
  *
  * @codeCoverageIgnore
  */
-class StaticClassException extends \LogicException
-{
+class StaticClassException extends \LogicException {
 
 }
 
-class FatalErrorException extends \ErrorException
-{
+class FatalErrorException extends \ErrorException {
 
 }
 
-class AccessingProtectedVariableException extends \LogicException
-{
-	
+class AccessingProtectedVariableException extends \LogicException {
+
 }
