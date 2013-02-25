@@ -1,13 +1,20 @@
 <?php
 
-namespace Installer;
+namespace Installer\Filesystem;
 
-class Directory
+class Directory extends Node
 {
-	const	MODE_PUBLIC = 0777,
-			MODE_NORMAL = 0755,
-			MODE_PROTECTED = 0666,
-			MODE_PRIVATE = 0640;
+	const	MODE_DIR_WRITEABLE_ALL = 0777, // for temps, logs, ...
+			MODE_DIR_WRITEABLE_OWNER = 0700,
+			MODE_DIR_WRITEABLE = 0755, // standard
+			MODE_DIR_READ_ALL = 0555,
+			MODE_DIR_READ_OWNER = 0500,
+
+			MODE_FILE_EXECUTABLE_ALL = 0777,
+			MODE_FILE_WRITEABLE_ALL = 0666,
+			MODE_FILE_WRITEABLE_OWNER = 0600,
+			MODE_FILE_READ_ALL = 0444,
+			MODE_FILE_READ_OWNER = 0400;
 
 	protected $name;
 	/**
@@ -25,8 +32,10 @@ class Directory
 	 * @param string $path
 	 * @return \Installer\Directory
 	 */
-	public function __construct($name, $dirname)
+	public function __construct(Filesystem $filesystem, $name, $dirname)
 	{
+		parent::__construct($filesystem);
+
 		$this->name = $name;
 		$this->dirname = $dirname;
 		$this->path = $this->dirname . '/' . $this->name;

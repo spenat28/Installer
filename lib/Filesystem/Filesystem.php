@@ -1,5 +1,7 @@
 <?php
 
+namespace Installer\Filesystem;
+
 /**
  * Description of Filesystem
  *

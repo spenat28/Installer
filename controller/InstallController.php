@@ -7,7 +7,8 @@ class InstallController extends BaseController
 
 	public function actionStepFirst()
 	{
-		$dir = new Directory('config', APP_DIR);
+		$filesystem = new Filesystem\Filesystem();
+		$dir = new Filesystem\Directory($filesystem, 'config', APP_DIR);
 		$this->response->render(TEMPLATES_DIR . '/install/stepFirst.phtml');
 	}
 
