@@ -1,0 +1,33 @@
+parameters:
+        # připojení k databázi
+        database:
+                username: root
+                password: root
+                database: clevis-mshop
+
+        # defaultní odesílací adresa
+        mailer:
+                from: spam@clevis.cz
+
+        # HTTP cesta k aplikaci (pro správné generování odkazů v CLI režimu - CRON, testy)
+        # host musí obsahovat i cestu ke kořeni aplikace!
+        http:
+                host: localhost/work/clevis/mShop
+                path: /
+
+        # HTTP cesta k testům (pro generování dotazů na API při spoužtění testů z editoru)
+        tests:
+                host: localhost
+                path: /work/clevis/mShop/tests/
+
+nette:
+        # zachytávat výjimky? pro provozní režim "yes"
+        application:
+                catchExceptions: no
+
+services:
+        # nastavení systémového mail serveru. výchozí je localhost, port 25. při debugMode TRUE se emaily pouze logují
+        nette.mailer:
+                class: Mshop\Mailing\SmtpMailer( [host: localhost, port: 25] )
+                setup:
+                        - setDebugMode( FALSE )

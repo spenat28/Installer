@@ -62,10 +62,11 @@ header('Expires: Mon, 23 Jan 1978 10:00:00 GMT');
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="brand" href="<?php echo ROOT_PATH; ?>">Installer</a>
+				<a class="brand" href="<?php Template::link() ?>">Installer</a>
 				<div class="nav-collapse collapse">
 					<ul class="nav">
 						<li class="active"><a href="<?php echo ROOT_PATH; ?>">Home</a></li>
+						<li><a href="<?php echo ROOT_PATH; ?>/check">Check</a></li>
 						<li><a href="<?php echo ROOT_PATH; ?>/install">Install</a></li>
 						<li><a href="<?php echo ROOT_PATH; ?>/update">Update</a></li>
 					</ul>

@@ -142,3 +142,8 @@ class FatalErrorException extends \ErrorException
 {
 
 }
+
+class AccessingProtectedVariableException extends \LogicException
+{
+	
+}

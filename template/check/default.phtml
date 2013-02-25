@@ -1,0 +1,30 @@
+	<h1>Check</h1>
+
+	<h2>Writeable Directories</h2>
+	<?php if($this->data->directories): ?>
+	<ul>
+		<?php foreach($this->data->directories as $dir): ?>
+		<li>
+			<em><small><?php echo $dir->name; ?></small></em>
+			<ul>
+				<li>Directory <?php echo ($dir->exists ? 'exists' : '<strong>do NOT exists</strong>'); ?>
+				<li>and <?php echo ($dir->isWriteable() ? 'is writeable' : '<strong>is NOT writeable</strong>'); ?>
+			</ul>
+		</li>
+		<?php endforeach; ?>
+	</ul>
+	<?php endif; ?>
+
+	<h2>Existing Files</h2>
+	<?php if($this->data->files): ?>
+	<ul>
+		<?php foreach($this->data->files as $file): ?>
+		<li>
+			<em><small><?php echo $file->name; ?></small></em>
+			<ul>
+				<li>File <?php echo ($file->exists ? 'exists' : '<strong>do NOT exists</strong>'); ?>
+			</ul>
+		</li>
+		<?php endforeach; ?>
+	</ul>
+	<?php endif; ?>
