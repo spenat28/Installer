@@ -6,7 +6,7 @@ vendor/*
 !.gitignore
 !.htaccess
 !web.config
-/nbproject/private/
+nbproject
 
 composer.lock
 
