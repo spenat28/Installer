@@ -1,45 +1,30 @@
 <?php
 
-namespace Installer;
-
 /**
  * Hierarchie výjimek
  * -----------------------------------------------------------------------------
  *
  * - Exception
  *     - RuntimeException = důležitý je typ výjimky pro přesné zachytávání; nelze jí předejít
- *         - Installer\InvalidStateException
- *         - Installer\DuplicateEntryException
- *         - Installer\IOException
- *             - Installer\FileNotFoundException
- *             - Installer\DirectoryNotFoundException
+ *         - InvalidStateException
+ *         - DuplicateEntryException
+ *         - IOException
+ *             - FileNotFoundException
+ *             - DirectoryNotFoundException
  *     - LogicException = chyba v kódu, který volá metodu, která tuto výjimku vyhodila; lze jí předejít
  *         - InvalidArgumentException
- *             - Installer\InvalidArgumentException
- *                 - Installer\ArgumentOutOfRangeException
- *         - Installer\NotImplementedException
- *         - Installer\NotSupportedException
- *             - Installer\DeprecatedException
- *         - Installer\StaticClassException
+ *             - InvalidArgumentException
+ *                 - ArgumentOutOfRangeException
+ *         - NotImplementedException
+ *         - NotSupportedException
+ *             - DeprecatedException
+ *         - StaticClassException
+ *		- FatalErrorException
  *
  */
 
 
 // === Runtime exceptions ======================================================
-
-/**
- * Výjimka vyhazovaná v případě, že volání metody je vzhledem k stavu objektu
- * neplatné (např. některé parametry ještě nejsou nastaveny) nebo je proběhlo
- * ve špatný nebo nevhodný čas.
- *
- * @codeCoverageIgnore
- */
-class InvalidStateException extends \RuntimeException
-{
-
-}
-
-
 
 /**
  * Výjimky vyhazovaná v případě, že se nepodaří zapsat záznam (obvykle) do DB
@@ -93,25 +78,12 @@ class DirectoryNotFoundException extends IOException
 // === Logic exceptions ========================================================
 
 /**
- * Výjimka vyhazovaná v případě, že je metodě předán neplatný argument.
- * (Např. předání jiného než očekávaného typu.)
- *
- * @codeCoverageIgnore
- */
-class InvalidArgumentException extends \InvalidArgumentException
-{
-
-}
-
-
-
-/**
  * Výjimka vyhazovaná v případě, že je metodě předán argument, který nespadá
  * do množiny povolených hodnot.
  *
  * @codeCoverageIgnore
  */
-class ArgumentOutOfRangeException extends InvalidArgumentException
+class ArgumentOutOfRangeException extends \InvalidArgumentException
 {
 
 }
@@ -162,6 +134,11 @@ class DeprecatedException extends NotSupportedException
  * @codeCoverageIgnore
  */
 class StaticClassException extends \LogicException
+{
+
+}
+
+class FatalErrorException extends \ErrorException
 {
 
 }

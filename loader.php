@@ -32,6 +32,8 @@ define('LIBS_DIR', __DIR__ . '/lib');
 require_once LIBS_DIR . '/includes.php';
 require_once LIBS_DIR . '/misc.php';
 require_once LIBS_DIR . '/functions.php';
+require_once LIBS_DIR . '/errorHandler.php';
+\ErrorHandler::register();
 
 
 respond(function ($request, $response) {
