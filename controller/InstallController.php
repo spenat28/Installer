@@ -32,18 +32,6 @@ class InstallController extends BaseController
 	 */
 	protected $messages = array();
 
-	/**
-	 *
-	 * @param type $appDir
-	 * @param array $dirs
-	 * @return \Installer
-	 */
-	public function __construct($appDir, array $dirs) {
-		$this->dirs = $dirs;
-		$this->appDir = $appDir;
-		return $this;
-	}
-
 	public function checkDirs()
 	{
 		foreach ($this->dirs as $dir) {

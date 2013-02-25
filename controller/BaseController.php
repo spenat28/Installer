@@ -21,5 +21,9 @@ abstract class BaseController
 	 */
 	public function __construct(\_Request $request,  \_Response $response, \_App $app) {
 		list($this->request, $this->response, $this->app) = func_get_args();
+		self::startup();
 	}
+
+	public static function startup()
+	{}
 }
