@@ -28,3 +28,8 @@ Create config local.neon from template with custom data from Installer form.
 * uhladit, zrefaktorovat
 * vymyslet nazev
 	* podle nej namespace
+* CLI router
+	* cli script
+* Windows server compatible
+* UNITtests
+* user testing
