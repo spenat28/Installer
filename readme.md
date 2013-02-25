@@ -33,3 +33,4 @@ Create config local.neon from template with custom data from Installer form.
 * Windows server compatible
 * UNITtests
 * user testing
+* formular a vytvareni neonu uzivatelsky nastavitelny -> generovat zavisle na tom form
